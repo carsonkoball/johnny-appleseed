@@ -11,11 +11,15 @@ johnny-appleseed is a tool I created that exports the logic from a Decision Tree
 
 ## Installation
 ### Dependencies
-- Python
-- scikit-learn
-- NumPy
-- json
-- pkg_resources
+- NumPy >= 1.22.4
+- scikit_learn >= 1.2.1
+- setuptools >= 41.2.0
+
+or
+
+```
+pip install -r requirements.txt
+```
 
 ### User installation
 #TODO
