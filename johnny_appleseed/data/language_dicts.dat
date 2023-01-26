@@ -1,0 +1,230 @@
+{
+    "languages": [{
+        "name": ".",
+        "properties": {
+            "indentation": "_INDENTATION_",
+            "if": "_IF_",
+            "if_end": "_IFEND_",
+            "condition": "_CONDITION_",
+            "then": "_THEN_",
+            "else": "_ELSE_",
+            "else_end": "_ELSEEND_",
+            "set": "_SET_",
+            "variable_operator": "_VARIABLE_OPERATOR_",
+            "feature_name_prefix": "_FEATURE_NAME_PREFIX_",
+            "feature_name_suffix": "_FEATURE_NAME_SUFFIX_",
+            "result_prefix": "_RESULT_PREFIX_",
+            "result_suffix": "_RESULT_SUFFIX_",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "C",
+        "properties": {
+            "indentation": "\t",
+            "if": "if (",
+            "if_end": "",
+            "condition": " <= ",
+            "then": ") {",
+            "else": "} else {",
+            "else_end": "}",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "printf(\"",
+            "result_suffix": "\");",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "C#",
+        "properties": {
+            "indentation": "\t",
+            "if": "if (",
+            "if_end": "",
+            "condition": " <= ",
+            "then": ") {",
+            "else": "} else {",
+            "else_end": "}",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "Console.Write(\"",
+            "result_suffix": "\");",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "C++",
+        "properties": {
+            "indentation": "\t",
+            "if": "if (",
+            "if_end": "",
+            "condition": " <= ",
+            "then": ") {",
+            "else": "} else {",
+            "else_end": "}",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "cout << \"",
+            "result_suffix": "\";",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "Go",
+        "properties": {
+            "indentation": "\t",
+            "if": "if ",
+            "if_end": "",
+            "condition": " <= ",
+            "then": " {",
+            "else": "} else {",
+            "else_end": "}",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "fmt.Print(\"",
+            "result_suffix": "\")",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "Java",
+        "properties": {
+            "indentation": "\t",
+            "if": "if (",
+            "if_end": "",
+            "condition": " <= ",
+            "then": ") {",
+            "else": "} else {",
+            "else_end": "}",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "System.out.println(\"",
+            "result_suffix": "\");",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "JavaScript",
+        "properties": {
+            "indentation": "\t",
+            "if": "if (",
+            "if_end": "",
+            "condition": " <= ",
+            "then": ") {",
+            "else": "} else {",
+            "else_end": "}",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "console.log(\"",
+            "result_suffix": "\");",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "PHP",
+        "properties": {
+            "indentation": "\t",
+            "if": "if (",
+            "if_end": "",
+            "condition": " <= ",
+            "then": ") {",
+            "else": "} else {",
+            "else_end": "}",
+            "set": " = ",
+            "variable_operator": "$",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "echo \"",
+            "result_suffix": "\";",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "Python",
+        "properties": {
+            "indentation": "\t",
+            "if": "if ",
+            "if_end": "",
+            "condition": " <= ",
+            "then": ":",
+            "else": "else:",
+            "else_end": "",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "print(",
+            "result_suffix": ", end='')",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "Ruby",
+        "properties": {
+            "indentation": "\t",
+            "if": "if ",
+            "if_end": "",
+            "condition": " <= ",
+            "then": "",
+            "else": "else",
+            "else_end": "end",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "puts \"",
+            "result_suffix": "\"",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "SQL",
+        "properties": {
+            "indentation": "\t",
+            "if": "IF ",
+            "if_end": "",
+            "condition": " <= ",
+            "then": "",
+            "else": "ELSE",
+            "else_end": "",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "PRINT '",
+            "result_suffix": "';",
+            "threshold_formatter": ".4f"
+        }
+    },
+    {
+        "name": "Swift",
+        "properties": {
+            "indentation": "\t",
+            "if": "if (",
+            "if_end": "",
+            "condition": " <= ",
+            "then": ") {",
+            "else": "} else {",
+            "else_end": "}",
+            "set": " = ",
+            "variable_operator": "",
+            "feature_name_prefix": "",
+            "feature_name_suffix": "",
+            "result_prefix": "print(\"",
+            "result_suffix": "\");",
+            "threshold_formatter": ".4f"
+        }
+    }]
+}
