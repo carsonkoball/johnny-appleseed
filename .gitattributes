@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Unmark jupyter notebooks as undetectable since they are only for testing
+.ipynb linguist-detectable=false
