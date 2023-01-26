@@ -49,7 +49,7 @@ class TreeExporter():
         self.exported_tree = ''
 
 
-    def __writer(self, language_dict, feature_map, class_map, file_name=''):
+    def __writer(self, language_dict, feature_map, class_map, output_file_name=''):
         """The main writer for the Decision Tree Classifier code.
         ----------
         language_dict : dictionary
@@ -60,7 +60,7 @@ class TreeExporter():
         class_map : dictionary
             A dictionary that maps the class names found in the tree
             to the desired class names in the exported language.
-        file_name : string, optional
+        output_file_name : string, optional
             The file name to which the tree will be exported to as text.
             If the file doesn't exist already, it will be created. If the
             file already exists, it will be overwritten. If a file name
@@ -75,9 +75,9 @@ class TreeExporter():
         # the tree itself
         self.__tree_writer(language_dict, feature_map, class_map)
         
-        if file_name != '':
+        if output_file_name != '':
             # file specified, export to said file
-            with open(file_name, 'w') as file:
+            with open(output_file_name, 'w') as file:
                 file.write(self.exported_tree)
 
         return self.exported_tree
@@ -227,7 +227,7 @@ class TreeExporter():
         # language not found
         return language_dict
 
-    def export(self, language, feature_map={}, class_map={}, file_name=''):
+    def export(self, language, feature_map={}, class_map={}, output_file_name=''):
         """Export the Decision Tree Classifier to the language of choice.
         ----------
         language : string or dictionary
@@ -241,7 +241,7 @@ class TreeExporter():
         class_map : dictionary, optional
             A dictionary that maps the class names found in the tree
             to the desired class names in the exported language.
-        file_name : string, optional
+        output_file_name : string, optional
             The file name to which the tree will be exported to as text.
             If the file doesn't exist already, it will be created. If the
             file already exists, it will be overwritten. If a file name
@@ -263,12 +263,12 @@ class TreeExporter():
             else:
                 # inputted language is a string and is found in the language presets
                 self.exported_tree = ''
-                self.__writer(language_dict, feature_map, class_map, file_name)
+                self.__writer(language_dict, feature_map, class_map, output_file_name)
                 return self.exported_tree
         elif type(language) == dict:
             # using a custom language dictionary
             self.exported_tree = ''
-            self.__writer(language, feature_map, class_map, file_name)
+            self.__writer(language, feature_map, class_map, output_file_name)
             return self.exported_tree
         else:
             # unknown input type (not string or dictionary)
