@@ -2,4 +2,4 @@
 * text=auto
 
 # Unmark jupyter notebooks as undetectable since they are only for testing
-.ipynb linguist-detectable=false
+*.ipynb linguist-detectable=false
