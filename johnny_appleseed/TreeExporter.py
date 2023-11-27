@@ -1,4 +1,5 @@
 import json
+import warnings
 
 import numpy as np
 import pkg_resources
@@ -37,7 +38,13 @@ class TreeExporter():
         self.thresholds = Tree.tree_.threshold
 
         # each feature seen by the classifier in the fitting phase
-        self.feature_names = Tree.feature_names_in_
+        if hasattr(Tree.tree_, 'feature_names_in'):
+            # classifier was trained with feature names explicitly
+            self.feature_names = Tree.feature_names_in_
+        else:
+            # classifier was NOT trained with feature names explicitly - numbers will be used instead
+            warnings.warn('tree was not fitted with feature names - using numbers instead', RuntimeWarning)
+            self.feature_names = list(range(Tree.n_features_in_))
 
         # leaf status for each node in classifier 1 if leaf 0 if subroot
         self.is_leaf = [1 if self.children_left[node] == self.children_right[node] else 0 for node in range(self.n_nodes)]
