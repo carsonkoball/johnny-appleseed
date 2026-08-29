@@ -12,6 +12,8 @@
 
 johnny-appleseed is a tool I created that exports the logic from a Decision Tree Classifier created with the scikit-learn library to another language. Additionally, I have found that this tool can also help with visualizing and explaining the models that it exports. For convenience, some languages already exist as a preset, such as C, Python, Java, Ruby, and more. Otherwise, custom languages can be used via a dictionary parameter.
 
+## Installation
+
 ### 1. Clone repository
 
 ```shell
