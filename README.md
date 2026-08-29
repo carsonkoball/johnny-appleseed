@@ -1,21 +1,26 @@
+
 # johnny-appleseed
 
 ## Table of Contents
+
 - [About](#about)
 - [Installation](#installation)
 - [How to use](#how-to-use)
 
 
 ## About
+
 johnny-appleseed is a tool I created that exports the logic from a Decision Tree Classifier created with the scikit-learn library to another language. Additionally, I have found that this tool can also help with visualizing and explaining the models that it exports. For convenience, some languages already exist as a preset, such as C, Python, Java, Ruby, and more. Otherwise, custom languages can be used via a dictionary parameter.
 
 ### 1. Clone repository
+
 ```shell
 git clone https://github.com/carsonkoball/johnny-appleseed.git
 cd amon-hen
 ```
 
 ### 2. Create virtual environment (recommended)
+
 **Linux / macOS:**
 ```bash
 python3 -m venv venv
@@ -32,11 +37,17 @@ python -m venv venv
 venv\Scripts\Activate.ps1
 ```
 
-### 3. Install core dependencies and package
+### 3. Install core dependencies
+
 **User:**
 ```shell
 pip install -r requirements.txt
-pip install -e .
+```
+
+**Example notebook (optional):**
+```shell
+cd example
+pip install -r requirements.txt
 ```
 
 ##  How to Use
@@ -44,7 +55,7 @@ First, import the module:
 ```
 from johnny_appleseed import TreeExporter
 ```
-Assuming you already have a trained classifier, ``clf``, you can initialize a ``TreeExporter`` class:
+Assuming you already have a trained classifier, ``clf``, you can instantiate a ``TreeExporter`` class:
 ```
 te = TreeExporter(clf)
 ```
@@ -104,4 +115,4 @@ te.export(
 )
 ```
 
-Example outputs can be seen in the ``/tests/test_TreeExporter.ipynb`` file.
+Example outputs can be seen in the ``/example/tree_exporter_example.ipynb`` file.
