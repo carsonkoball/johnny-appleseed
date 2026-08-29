@@ -53,7 +53,7 @@ pip install -r requirements.txt
 ##  How to Use
 First, import the module:
 ```
-from johnny_appleseed import TreeExporter
+from johnny_appleseed.tree_exporter import TreeExporter
 ```
 Assuming you already have a trained classifier, ``clf``, you can instantiate a ``TreeExporter`` class:
 ```
