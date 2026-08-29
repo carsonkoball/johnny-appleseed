@@ -39,9 +39,9 @@ venv\Scripts\Activate.ps1
 
 ### 3. Install core dependencies
 
-**User:**
 ```shell
 pip install -r requirements.txt
+pip install -e .
 ```
 
 **Example notebook (optional):**
