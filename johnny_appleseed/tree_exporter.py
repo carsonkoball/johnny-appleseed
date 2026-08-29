@@ -1,8 +1,8 @@
 import json
+from pathlib import Path
 import warnings
 
 import numpy as np
-import pkg_resources
 from sklearn.tree import DecisionTreeClassifier
 
 
@@ -21,6 +21,10 @@ class TreeExporter():
         # check to see if user inputs a scikit-learn Decision Tree Classifier
         if not isinstance(Tree, DecisionTreeClassifier):
             raise TypeError('Input is not a scikit-learn DecisionTreeClassifier() object.')
+            
+        # file path of language_settings.json
+        script_dir = Path(__file__).parent
+        self.language_settings_file = script_dir.parent / "johnny_appleseed" / "data" / "language_settings.json"
 
         # number of nodes that comprise the classifier
         self.n_nodes = Tree.tree_.node_count
@@ -38,7 +42,7 @@ class TreeExporter():
         self.thresholds = Tree.tree_.threshold
 
         # each feature seen by the classifier in the fitting phase
-        if hasattr(Tree.tree_, 'feature_names_in'):
+        if hasattr(Tree, 'feature_names_in_'):
             # classifier was trained with feature names explicitly
             self.feature_names = Tree.feature_names_in_
         else:
@@ -203,11 +207,11 @@ class TreeExporter():
             
     def __get_language_dict(self, language):
         """Retrieve language properties from presets of languages found
-        in language_dicts.dat.
+        in language_setings.json.
         ----------
         language : string
             The language whose properties will be retrieved from the
-            language_dicts.dat file.
+            language_settings.json file.
 
         Returns
         -------
@@ -215,24 +219,16 @@ class TreeExporter():
              The dictionary containing properties of the desired language.
         """
         
-        language_dict = {}
-        
-        # reading the data from the file
-        stream = pkg_resources.resource_filename('johnny_appleseed', 'data/language_dicts.dat')
-
-        with open(stream) as f:
-            data = f.read()
-
         # reconstructing the data as a dictionary of dictionaries
-        language_dicts = json.loads(data)
+        with open(self.language_settings_file) as file:
+            language_dicts = json.load(file)
 
         # finding only the dictionary of the language we want
-        for l in language_dicts['languages']:
-            if l['name'] == language:
-                language_dict = l['properties']
+        if language in language_dicts:
+            return language_dicts[language]
             
         # language not found
-        return language_dict
+        return {}
 
     def export(self, language, feature_map={}, class_map={}, output_file_name=''):
         """Export the Decision Tree Classifier to the language of choice.
@@ -263,7 +259,7 @@ class TreeExporter():
         if type(language) == str:
             # using a preset language
             language_dict = self.__get_language_dict(language)
-            
+
             if language_dict == {}:
                 # inputted language is string, but string is not found in language presets
                 raise ValueError('language preset \'' + language + '\' not found.')
@@ -291,16 +287,11 @@ class TreeExporter():
              The languages that have presets available.
         """
 
-        # reading the data from the file
-        stream = pkg_resources.resource_filename('johnny_appleseed', 'data/language_dicts.dat')
-
-        with open(stream) as f:
-            data = f.read()
-
         # reconstructing the data as a dictionary of dictionaries
-        language_dicts = json.loads(data)
+        with open(self.language_settings_file) as file:
+            language_dicts = json.load(file)
         
-        return [language_dict['name'] for language_dict in language_dicts['languages']]
+        return list(language_dicts)
     
     def get_language_preset(self, language):
         """Get the preset properties from a desired language.
