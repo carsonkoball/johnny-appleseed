@@ -1,0 +1,17 @@
+if (petalWidth <= 0.8000) {
+	System.out.println("Setosa");
+} else {
+	if (petalWidth <= 1.7500) {
+		if (petalength <= 4.9500) {
+			System.out.println("Iris Versicolour");
+		} else {
+			System.out.println("Iris Virginica");
+		}
+	} else {
+		if (petalength <= 4.8500) {
+			System.out.println("Iris Virginica");
+		} else {
+			System.out.println("Iris Virginica");
+		}
+	}
+}
