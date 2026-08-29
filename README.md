@@ -115,4 +115,4 @@ te.export(
 )
 ```
 
-Example outputs can be seen in the ``/example/tree_exporter_example.ipynb`` file.
+Example outputs can be seen in [/example/tree_exporter_example.ipynb](/example/tree_exporter_example.ipynb).
